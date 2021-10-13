@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de productos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <a class="btn btn-success" style="display: flex;position: absolute;right: 2vh;top: 1vh;" href="/productos">
+            Ver Productos
+        </a>
+        <h1>Bienvenido</h1>
+        <h4>Ingrese un nuevo producto</h4>
+        <form action="/productos" method="POST">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" name="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="precio" class="form-label">Precio:</label>
+                <input type="number" class="form-control" name="price" required>
+            </div>
+            <div class="mb-3">
+                <label for="foto" class="form-label">Foto url:</label>
+                <input type="text" class="form-control" name="thumbNail" required>
+            </div>
+            <button class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+</body>
+</html>
