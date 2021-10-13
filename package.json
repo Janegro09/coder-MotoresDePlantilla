@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/main.js ",
-    "start_pug": "nodemon src/mainPug.js ",
-    "start_ejs": "nodemon src/mainEJS.js "
+    "start": "nodemon src/main.js "
   },
   "author": "",
   "license": "ISC",

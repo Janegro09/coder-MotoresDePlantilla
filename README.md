@@ -4,7 +4,7 @@
 *  npm start
 
 ## Pug
-* npm start_pug
+* nodemon src/mainPug.js
 
 ## Ejs
-* npm start_ejs
+* nodemon src/mainEJS.js
