@@ -24,7 +24,16 @@ app.get('/productos', (req, res) => {
 })
 
 app.post('/productos', (req, res) => {
-    res.send(req.query)
+    const {title, price, thumbNail} = req.body;
+    const adjunto = {
+        title,
+        price,
+        thumbNail
+    }
+    const id = productos.save(adjunto);
+    
+    res.redirect('/')
+
 })
 
 app.get('/', (req, res) => {
