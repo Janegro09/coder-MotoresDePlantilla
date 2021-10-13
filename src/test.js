@@ -11,17 +11,26 @@ app.use(express.static('../public'));
 
 
 app.engine('cte', async (filePath, options, callbacks) => {
+
     let all = productos.getAll()
-    let aux='';
-    all.map(v => {
-        aux = aux+`
-        <div class="card m-2 p-2" style="width:250px;display: flex;align-items: center;"">
-        <p>Nombre: ${v.title}</p>
-        <p>Precio: ${v.price}</p>
-        <img alt="${v.title}" width="150px" src="${v.thumbNail}">
-        </div>
-        `
-    })
+    let aux = `<div class="alert alert-warning m-2 p-2">No hay productos para mostrar</div>`
+
+    if(all) {
+        if(all.length > 0) {
+            aux = '';
+            all.map(v => {
+                aux = aux+`
+                <tr>
+                <th scope="row">${v.id}</th>
+                <td>${v.title}</td>
+                <td>${v.price}</td>
+                <td><img alt="${v.title}" width="150px" src="${v.thumbNail}"></td>
+                </tr>
+                `
+            })
+        }
+    }
+
     try {
         const content = await fs.readFile(filePath)
         const rendered = content.toString()
@@ -47,7 +56,7 @@ app.post('/productos', (req, res) => {
     }
     const id = productos.save(adjunto);
     
-    res.send({id,title,price,thumbNail})
+    res.redirect('/')
 
 })
 
